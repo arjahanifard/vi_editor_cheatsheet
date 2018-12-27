@@ -1,0 +1,489 @@
+
+%alireza jahani fard
+%gap:https://gap.im/fedora
+%email:alireza@jahanifard.ir
+\documentclass[12pt]{article} 
+        %rangi kardane matn
+        \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%edghame jadavel
+   \usepackage{multicol}
+    \usepackage{amssymb}
+    \usepackage{paralist}
+    %vared kardane pdf
+    \usepackage{pdfpages}
+    %gharar dadane kadr
+    \usepackage{tcolorbox}
+    %diagram va rasme shekl
+    \usepackage{tikz-cd}
+    %afzodan aks
+    \usepackage{graphicx}
+    \usepackage{listings}
+    %ejbar namayesh aks zire matn
+    \usepackage{float}
+    \usepackage{xcolor,colortbl}
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+    \usepackage{fancyhdr}
+    \usepackage{xepersian}
+    \settextfont{XB Kayhan}
+    \setlatintextfont[ExternalLocation,BoldFont={lmroman10-bold},BoldItalicFont={lmroman10-bolditalic},ItalicFont={lmroman10-italic}]{lmroman10-regular}
+    \setdigitfont{XB Yas}
+    \defpersianfont\nast{IranNastaliq}
+    \title{\lr{Vi Editor (Persian Cheat Sheet)}}
+    \author{
+          علیرضا جهانی فرد - تماس با من در پیام رسان گپ @fedora
+}
+    %gharar dadane tah barg
+    \pagestyle{fancy}
+    %dastor mianbor baray pavaraghi latin va persian
+    \begin{document}
+    \newpage
+    \maketitle
+    \begin{table}[H]
+        \centering
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}%sakht jadval
+        \hline
+ \multicolumn{2}{{|c|}}{\lr{\textbf{File management commands}}}%edgham 2 seton
+        & 
+ \multicolumn{2}{{|c|}}{ \lr{\textbf{Input commands}} (برای خروج از کلید
+ 	\lr{\textbf{Esc}}
+ 	)}
+         \\
+\cline{1-4}%khat keshidan zire seton
+         دستور
+         &
+         عملکرد
+         &
+          دستور
+          &
+          عملکرد
+\\
+        \hline
+        \hline
+	    \lr{\textbf{:wq}}%chap chin kardan jomalat latin
+        &
+      نوشتن در فایل و خروج
+&
+\lr{\textbf{a}}%chap chin kardan jomalat latin
+&
+اضافه کردن پس از مکان نما
+\\
+\lr{\textbf{:q!}}%chap chin kardan jomalat latin
+        &
+      بدون ذخیره کردن خارج شوید
+&
+\lr{\textbf{i}}%chap chin kardan jomalat latin
+&
+اضافه کردن قبل از مکان نما
+\\
+\lr{\textbf{ZZ}}%chap chin kardan jomalat latin
+        &
+     مشابه
+     \lr{\textbf{\textcolor{blue}{:wq}}}%chap chin kardan jomalat latin
+&
+\lr{\textbf{o}}%chap chin kardan jomalat latin
+&
+باز کردن یک خط در زیر
+\\
+\lr{\textbf{:sh}}%chap chin kardan jomalat latin
+        &
+اجرا دستورات شل
+&
+\lr{\textbf{O}}%chap chin kardan jomalat latin
+&
+باز کردن یک خط در بالا
+\\
+        &
+&
+\lr{\textbf{:r file}}%chap chin kardan jomalat latin
+&
+اضافه کردن فایل به بعد از مکان نما
+\\
+\hline
+\hline
+\multicolumn{2}{{|c|}}{\lr{\textbf{Window Motions}}}%edgham 2 seton}
+       & 
+\multicolumn{2}{{|c|}}{\lr{\textbf{Cursor Motions}}}
+        \\
+\cline{1-4}%khat keshidan zire seton
+        دستور
+        &
+        عملکرد
+        &
+         دستور
+         &
+         عملکرد
+\\
+\hline
+\hline
+\lr{\textbf{<ctrl>d}}%chap chin kardan jomalat latin
+&
+پایین رفتن (نیم صفحه)
+&
+\lr{\textbf{H}}%chap chin kardan jomalat latin
+&
+گوشه بالا سمت چپ (خانه)
+\\
+\lr{\textbf{<ctrl>u}}%chap chin kardan jomalat latin
+&
+بالا رفتن (نیم صفحه)
+&
+\lr{\textbf{M}}%chap chin kardan jomalat latin
+&
+وسط خط
+\\
+\lr{\textbf{<ctrl>f}}%chap chin kardan jomalat latin
+&
+صفحه بعد
+&
+\lr{\textbf{L}}%chap chin kardan jomalat latin
+&
+گوشه پایین سمت چپ
+\\
+\lr{\textbf{<ctrl>b}}%chap chin kardan jomalat latin
+&
+صفحه قبل
+&
+\lr{\textbf{h}}%chap chin kardan jomalat latin
+&
+برگشت به کاراکتر قبلی
+\\
+\lr{\textbf{/string}}%chap chin kardan jomalat latin
+&
+جستجو به جلو
+&
+\lr{\textbf{j}}%chap chin kardan jomalat latin
+&
+یک خط پایین
+\\
+\lr{\textbf{?string}}%chap chin kardan jomalat latin
+&
+جستجو به عقب
+&
+\lr{\textbf{k}}%chap chin kardan jomalat latin
+&
+یک خط بالا
+\\
+\lr{\textbf{<ctrl>g}}%chap chin kardan jomalat latin
+&
+نمایش شماره خط فعلی و اطلاعات فایل
+&
+\lr{\textbf{\^}}%chap chin kardan jomalat latin
+&
+اول خط
+\\
+\lr{\textbf{n}}%chap chin kardan jomalat latin
+&
+تکرار جستجو
+&
+\lr{\textbf{\$}}%chap chin kardan jomalat latin
+&
+انتهای خط
+\\
+\lr{\textbf{N}}%chap chin kardan jomalat latin
+&
+تکرار جستجو بصورت معکوس
+&
+\lr{\textbf{l}}%chap chin kardan jomalat latin
+&
+یک کاراکتر رو به جلو
+\\
+\lr{\textbf{G}}%chap chin kardan jomalat latin
+&
+رفتن به آخرین خط
+&
+\lr{\textbf{w}}%chap chin kardan jomalat latin
+&
+یک کلمه رو به جلو
+\\
+\lr{\textbf{nG}}%chap chin kardan jomalat latin
+&
+رفتن به خط 
+\textcolor{blue}{n}
+&
+\lr{\textbf{b}}%chap chin kardan jomalat latin
+&
+یک کلمه رو به عقب
+\\
+\lr{\textbf{:n}}%chap chin kardan jomalat latin
+&
+رفتن به خط
+\textcolor{blue}{n}
+&
+\lr{\textbf{fc}}%chap chin kardan jomalat latin
+&
+پیدا کردن
+\textcolor{blue}{c}
+\\
+\lr{\textbf{z(CR)}}%chap chin kardan jomalat latin
+&
+تغییر مکان پنجره: مکان نما در بالا
+&
+\lr{\textbf{;}}%chap chin kardan jomalat latin
+&
+تکرار جستجو (پیدا کردن \textcolor{blue}{c} بعدی)
+\\
+\lr{\textbf{z.}}%chap chin kardan jomalat latin
+&
+تغییر مکان پنجره: مکان نما در وسط
+&
+&
+\\
+\lr{\textbf{z-}}%chap chin kardan jomalat latin
+&
+تغییر مکان پنجره: مکان نما در پایین
+&
+&
+\\
+\hline
+\hline
+\multicolumn{2}{{|c|}}{\lr{\textbf{Change commands (input mode)}}}%edgham 2 seton}
+       & 
+\multicolumn{2}{{|c|}}{\lr{\textbf{Change during insert mode}}}
+        \\
+\cline{1-4}%khat keshidan zire seton
+        دستور
+        &
+        عملکرد
+        &
+         دستور
+         &
+         عملکرد
+\\
+\hline
+\hline
+\lr{\textbf{cw}}%chap chin kardan jomalat latin
+&
+تغییر کلمه (\textcolor{blue}{Esc})
+&
+\lr{\textbf{<ctrl>h}}%chap chin kardan jomalat latin
+&
+برگشت به اولین کاراکتر
+\\
+\lr{\textbf{cc}}%chap chin kardan jomalat latin
+&
+تغییر خط (\textcolor{blue}{Esc}) - خط خالی
+&
+\lr{\textbf{<ctrl>w}}%chap chin kardan jomalat latin
+&
+برگشت به اولین حرف
+\\
+\lr{\textbf{c\$}}%chap chin kardan jomalat latin
+&
+تغییر به پایان خط
+&
+&
+\\
+\lr{\textbf{rc}}%chap chin kardan jomalat latin
+&
+جایگزین کاراکتر با (\textcolor{blue}{c})
+&
+&
+\\
+\lr{\textbf{R}}%chap chin kardan jomalat latin
+&
+جایگزین (\textcolor{blue}{Esc}) هرچیزی
+&
+&
+\\
+\lr{\textbf{s}}%chap chin kardan jomalat latin
+&
+زیرنویس (\textcolor{blue}{Esc}) 1 کاراکتر با رشته
+&
+&
+\\
+\lr{\textbf{S}}%chap chin kardan jomalat latin
+&
+زیرنویس (\textcolor{blue}{Esc}) خط با متن
+&
+&
+\\
+\lr{\textbf{.}}%chap chin kardan jomalat latin
+&
+تکرار آخرین تغییرات
+&
+&
+\\
+\hline
+\end{tabular} 
+\end{center}
+\end{table}
+\begin{table}
+        \centering
+\begin{center}
+\begin{tabular}{|c|c|c|c|}%sakht jadval
+\hline
+\multicolumn{2}{{|c|}}{\lr{\textbf{Deleting commands}}}%edgham 2 seton}
+       & 
+\multicolumn{2}{{|c|}}{\lr{\textbf{Move text from file old to file new}}}
+        \\
+\cline{1-4}%khat keshidan zire seton
+        دستور
+        &
+        عملکرد
+        &
+         دستور
+         &
+         عملکرد
+\\
+\hline
+\hline
+\lr{\textbf{ndd}}%chap chin kardan jomalat latin
+&
+حذف خط (\textcolor{blue}{n}) 
+&
+\lr{\textbf{vi old}}%chap chin kardan jomalat latin
+&
+\\
+\lr{\textbf{dw}}%chap chin kardan jomalat latin
+&
+حذف کلمه
+&
+\lr{\textbf{"a10yy}}%chap chin kardan jomalat latin
+&
+ارسال ۱۰ خط به بافر \textcolor{blue}{a}
+\\
+\lr{\textbf{dnw}}%chap chin kardan jomalat latin
+&
+حذف کلمه \textcolor{blue}{n}
+&
+\lr{\textbf{:e new}}%chap chin kardan jomalat latin
+&
+ویرایش فایل جدید
+\\
+\lr{\textbf{dnw}}%chap chin kardan jomalat latin
+&
+حذف کلمه \textcolor{blue}{n}
+&
+\lr{\textbf{:e new}}%chap chin kardan jomalat latin
+&
+ویرایش فایل جدید
+\\
+\lr{\textbf{db}}%chap chin kardan jomalat latin
+&
+حذف کلمه قبلی
+&
+\lr{\textbf{"ap}}%chap chin kardan jomalat latin
+&
+متن را بعد از مکان نما قرار میدهد
+\\
+\lr{\textbf{x}}%chap chin kardan jomalat latin
+&
+حذف کاراکتر
+&
+\lr{\textbf{:30,60w new}}%chap chin kardan jomalat latin
+&
+نوشتن خط های ۳۰ تا ۶۰ در یک فایل جدید
+\\
+\lr{\textbf{dd}}%chap chin kardan jomalat latin
+&
+حذف خط 
+&
+&
+\\
+\hline
+\hline
+\multicolumn{2}{{|c|}}{\lr{\textbf{Recovering deletions}}}%edgham 2 seton}
+       & 
+\multicolumn{2}{{|c|}}{\lr{\textbf{Undo commands}}}
+        \\
+\cline{1-4}%khat keshidan zire seton
+        دستور
+        &
+        عملکرد
+        &
+         دستور
+         &
+         عملکرد
+\\
+\hline
+\hline
+\lr{\textbf{p}}%chap chin kardan jomalat latin
+&
+قراردادن بافر بعد از مکان نما&
+\lr{\textbf{u}}%chap chin kardan jomalat latin
+&
+برگشت به آخرین تغییر
+\\
+\lr{\textbf{P}}%chap chin kardan jomalat latin
+&
+قراردادن بافر قبل از مکان نما&
+\lr{\textbf{U}}%chap chin kardan jomalat latin
+&
+برگشت تمام تغییرات یک خط
+\\
+\hline
+\hline
+\multicolumn{2}{{|c|}}{\lr{\textbf{Rearrangement commands}}}%edgham 2 seton}
+       & 
+\multicolumn{2}{{|c|}}{\lr{\textbf{Parameters}}}
+        \\
+\cline{1-4}%khat keshidan zire seton
+        دستور
+        &
+        عملکرد
+        &
+         دستور
+         &
+         عملکرد
+\\
+\hline
+\hline
+\lr{\textbf{Y}}%chap chin kardan jomalat latin
+&
+کپی خط
+&
+\lr{\textbf{:set list}}%chap chin kardan jomalat latin
+&
+نمایش کاراکترهای مخفی
+\\
+\lr{\textbf{yw}}%chap chin kardan jomalat latin
+&
+کپی حرف
+&
+\lr{\textbf{:set nolist}}%chap chin kardan jomalat latin
+&
+عدم نمایش کاراکترهای مخفی
+\\
+\lr{\textbf{yy}}%chap chin kardan jomalat latin
+&
+کپی خط
+&
+\lr{\textbf{:set number}}%chap chin kardan jomalat latin
+&
+نمایش شماره خطوط
+\\
+&
+&
+\lr{\textbf{:set nonumber}}%chap chin kardan jomalat latin
+&
+عدم نمایش شماره خطوط
+\\
+&
+&
+\lr{\textbf{:set showmode}}%chap chin kardan jomalat latin
+&
+نمایش حالت در خط انتهایی
+\\
+&
+&
+\lr{\textbf{:set noshowmode}}%chap chin kardan jomalat latin
+&
+عدم نمایش حالت در خط انتهایی
+\\
+&
+&
+\lr{\textbf{:set all}}%chap chin kardan jomalat latin
+&
+نمایش وضعیت تمام پارامترها
+\\
+\hline
+\end{tabular}        
+\end{center}
+\end{table}
+
+\end{document}
